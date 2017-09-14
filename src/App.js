@@ -28,11 +28,11 @@ export class App extends Component {
 
 function mapStateToProps(state) {
   console.log('in map state to props')
-  return {catPics: state.pictures}
+  return {catPics: state.cats.pictures}
 }
 
 function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)}
 }
-export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
-// export default WrapperApp;
+const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export default WrapperApp;
